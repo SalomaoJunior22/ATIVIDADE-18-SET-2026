@@ -1,10 +1,22 @@
-# CALCULADORA DE DESCONTO
+# SISTEMA DE AUTENTICAÇÃO
 
-preco = float(input("Digite o preço do produto: R$ "))
-desconto = float(input("Digite o percentual de desconto (%): "))
+palavra_passe_correta = "1234"
+tentativas = 0
+max_tentativas = 3
 
-valor_desconto = preco * desconto / 100
-preco_final = preco - valor_desconto
+while tentativas < max_tentativas:
+    palavra_passe = input("Introduza a palavra-passe: ")
 
-print(f"Valor do desconto: R$ {valor_desconto:.2f}")
-print(f"Preço final com desconto: R$ {preco_final:.2f}")
+    if palavra_passe == palavra_passe_correta:
+        print("Autenticação bem-sucedida! Acesso permitido.")
+        break
+    else:
+        tentativas += 1
+        tentativas_restantes = max_tentativas - tentativas
+
+        if tentativas_restantes > 0:
+            print("Palavra-passe incorrecta.")
+            print("Tentativas restantes:", tentativas_restantes)
+        else:
+            print("Número máximo de tentativas atingido.")
+            print("Acesso bloqueado!")

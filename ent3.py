@@ -1,8 +1,18 @@
-# CONVERSOR DE TEMPO
+# ANALIZE DE NUMEROS
 
-segundos = int(input("Digite o tempo em segundos: "))
+numeros = []
 
-horas = segundos // 3600
-minutos = (segundos % 3600) // 60
+for i in range(5):
+    numero = float(input(f"Introduza o {i + 1}º número: "))
+    numeros.append(numero)
 
-print(f"{horas} horas, {minutos} minutos e {segundos} segundos")
+soma = sum(numeros)
+media = soma / 5
+maior = max(numeros)
+menor = min(numeros)
+
+print("\n--- Resultados da Análise ---")
+print(f"Soma: {soma}")
+print(f"Média: {media}")
+print(f"Maior valor: {maior}")
+print(f"Menor valor: {menor}")

@@ -1,10 +1,18 @@
-# CALCULADORA DE TROCO
+# CLASSIFICADOR DE CLIENTE
 
-valor_compra = float(input("Digite o valor da compra: R$ "))
-valor_pago = float(input("Digite o valor pago: R$ "))
+idade = int(input("Introduza a sua idade: "))
+rendimento = float(input("Introduza o seu rendimento mensal em euros (€): "))
 
-if valor_pago >= valor_compra:
-    troco = valor_pago - valor_compra
-    print(f"O troco é: R$ {troco:.2f}")
+if idade < 18:
+    categoria = "Bronze"
+elif rendimento < 1000:
+    categoria = "Prata"
+elif rendimento < 2500:
+    categoria = "Ouro"
 else:
-    print("Valor pago insuficiente!")
+    categoria = "Diamante"
+
+print("\n--- Classificação do Cliente ---")
+print("Idade:", idade, "anos")
+print("Rendimento mensal: €", rendimento)
+print("Categoria do cliente:", categoria)
